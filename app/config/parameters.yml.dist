@@ -17,3 +17,16 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret: ThisTokenIsNotSoSecretChangeIt
+
+    # Default items array
+    items:
+      0:
+        name:
+          'item1'
+        count:
+          13
+      1:
+        name:
+          'item2'
+        count:
+          4
