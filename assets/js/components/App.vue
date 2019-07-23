@@ -1,16 +1,16 @@
 <template>
     <div>
-        <ItemComponent />
+        <ItemsComponent/>
     </div>
 </template>
 
 <script>
-    import ItemComponent from './ItemComponent.vue'
+    import ItemsComponent from './ItemsComponent.vue'
 
     export default {
         name: 'app',
         components: {
-            ItemComponent
+            ItemsComponent
         }
     }
 </script>

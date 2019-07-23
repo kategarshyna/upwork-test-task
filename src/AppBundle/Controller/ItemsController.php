@@ -5,16 +5,15 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
-class ItemController extends Controller
+class ItemsController extends Controller
 {
     /**
      * @Route("/items")
      */
     public function itemsAction(Request $request)
     {
-        return [
-            "items" => $this->container->getParameter('items')
-        ];
+        return new JsonResponse($this->container->getParameter('items'));
     }
 }
