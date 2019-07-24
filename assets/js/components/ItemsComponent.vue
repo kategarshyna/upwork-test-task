@@ -17,7 +17,11 @@
                             <tr v-for="(item, index) in items">
                                 <td>{{ item.name }}</td>
                                 <td>{{ item.count }}</td>
-                                <td><button v-on:click="removeItem(index)" class="btn btn-sm btn-danger"><span class="glyphicon glyphicon-remove"></span></button></td>
+                                <td>
+                                    <button v-on:click="removeItem(index)" class="btn btn-sm btn-danger">
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                    </button>
+                                </td>
                             </tr>
                             </tbody>
                         </table>
@@ -38,7 +42,9 @@
                         <label for="count">Count</label>
                         <input v-model="count" type="number" class="form-control" id="count" placeholder="Enter count">
                     </div>
-                    <button v-on:click="addItem" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></button>
+                    <button v-on:click="addItem" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-plus"></span
+                        ></button>
                 </div>
             </div>
         </div>
@@ -108,16 +114,9 @@
             },
 
             isDuplicate: function (name) {
-                let duplicate = false;
-
-                this.items.forEach(function (item) {
-                    if (item.name === name) {
-                        duplicate = true;
-                        return;
-                    }
+                return this.items.some(function (item) {
+                    return item.name === name;
                 });
-
-                return duplicate;
             }
         },
 
